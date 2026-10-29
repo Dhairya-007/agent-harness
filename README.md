@@ -4,6 +4,10 @@ A small, typed agent harness for Claude.
 
 The loop itself — ask the model, run the tools it asks for, feed the results back — is about thirty lines. Everything that makes it survive contact with a real task is the other ninety percent, and that is what this library is: **validated tool inputs, approval gates, a context budget, a verification pass, honest errors, and a trace you can read.**
 
+![A six-turn agent run: a schema rejection, an approval denial, context pruning and a verification send-back](docs/demo.gif)
+
+<sub>`npm run demo` — runs with **no API key and no cost**. The model is scripted; the loop, the validation, the gate, the budget and the verifier are real. The script walks it into each failure on purpose: turn 2 sends arguments that miss the schema and are rejected *before the tool runs*, turn 4 tries to delete a backup and is stopped by the approval gate, turn 5 answers without naming its source and is sent back. A harness earns its keep on the turns that go wrong, so a demo of the happy path would show nothing.</sub>
+
 ```ts
 import { z } from "zod";
 import { Agent, defineTool } from "agent-harness";
@@ -231,6 +235,7 @@ await agent.run(input, { signal, state });
 
 ```bash
 npm install
+npm run demo      # the GIF above — scripted model, no key, no cost
 npm test          # 39 tests, no network
 npm run typecheck
 npm run build
@@ -238,6 +243,8 @@ npm run build
 ANTHROPIC_API_KEY=... npm run example:calculator
 ANTHROPIC_API_KEY=... npx tsx examples/repo-qa.ts "where is the agent loop?"
 ```
+
+`examples/offline-demo.ts` is the one to read first — it is the shortest path to seeing every feature fire, and it costs nothing to run.
 
 The test suite replays scripted responses through a fake client, so it exercises the loop — parallel calls, refusals, truncation, pruning, verification send-backs, state isolation — without spending a token.
 
