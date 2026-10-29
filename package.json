@@ -36,7 +36,8 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "node --import tsx --test test/*.test.ts",
     "example:calculator": "tsx examples/calculator.ts",
-    "example:repo-qa": "tsx examples/repo-qa.ts"
+    "example:repo-qa": "tsx examples/repo-qa.ts",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.3.0",
