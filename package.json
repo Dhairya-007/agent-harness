@@ -1,0 +1,50 @@
+{
+  "name": "@dhairya-007/agent-harness",
+  "version": "0.1.0",
+  "description": "A small, typed agent harness for Claude: tool registry, approval gates, context budgeting, verification and a readable trace.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Dhairya Oza",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dhairya-007/agent-harness.git"
+  },
+  "keywords": [
+    "claude",
+    "anthropic",
+    "llm",
+    "agent",
+    "tool-use",
+    "agentic"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test test/*.test.ts",
+    "example:calculator": "tsx examples/calculator.ts",
+    "example:repo-qa": "tsx examples/repo-qa.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.3.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
