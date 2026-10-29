@@ -1,5 +1,11 @@
 # agent-harness
 
+[![CI](https://github.com/Dhairya-007/agent-harness/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Dhairya-007/agent-harness/actions/workflows/ci.yml)
+[![License](https://img.shields.io/badge/license-MIT-0E7C6B?style=flat-square)](LICENSE)
+[![Node](https://img.shields.io/badge/node-%3E%3D20.11-4F46E5?style=flat-square&logo=nodedotjs&logoColor=white)](package.json)
+[![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?style=flat-square&logo=typescript&logoColor=white)](tsconfig.json)
+[![Built for Claude](https://img.shields.io/badge/built%20for-Claude-D97757?style=flat-square&logo=claude&logoColor=white)](https://platform.claude.com/docs)
+
 A small, typed agent harness for Claude.
 
 The loop itself — ask the model, run the tools it asks for, feed the results back — is about thirty lines. Everything that makes it survive contact with a real task is the other ninety percent, and that is what this library is: **validated tool inputs, approval gates, a context budget, a verification pass, honest errors, and a trace you can read.**
