@@ -1,0 +1,1 @@
+The report identifies that the loop does not check for a max_tokens stop reason before executing tool calls, and explains that truncated arguments can still parse as a valid partial object. It names agent.ts.

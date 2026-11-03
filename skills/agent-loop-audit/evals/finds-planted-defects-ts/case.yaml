@@ -1,0 +1,7 @@
+name: finds-planted-defects-ts
+description: >
+  A realistic TypeScript support agent with nine planted defects and five things
+  deliberately done right. A good result names the unvalidated tool input, the
+  missing max_tokens guard, the message-removing pruner, the unconfined path join
+  and the rejected temperature parameter — each with a file and line — and does not
+  report the five correct behaviours as defects.

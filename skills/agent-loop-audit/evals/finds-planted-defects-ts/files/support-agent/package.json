@@ -1,0 +1,8 @@
+{
+  "name": "support-agent",
+  "version": "0.4.2",
+  "private": true,
+  "type": "module",
+  "scripts": { "start": "tsx src/index.ts", "test": "vitest run" },
+  "dependencies": { "@anthropic-ai/sdk": "^0.71.0", "zod": "^4.0.5" }
+}

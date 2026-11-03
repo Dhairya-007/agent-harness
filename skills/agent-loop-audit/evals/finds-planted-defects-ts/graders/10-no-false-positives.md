@@ -1,0 +1,1 @@
+The report does NOT claim any of the following correct behaviours is a defect: duplicate tool names being rejected at registration; the unknown-tool path returning an error result instead of throwing; tool definition insertion order being preserved; the client maxRetries setting; a thrown tool body being converted to an error result.
