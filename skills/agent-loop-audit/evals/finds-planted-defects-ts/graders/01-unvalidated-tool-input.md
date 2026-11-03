@@ -1,0 +1,1 @@
+The report identifies that tool arguments reach the tool body without schema validation: Registry.call passes raw model input to tool.run, and the Zod schema is only used to generate the wire schema. It names tools.ts.

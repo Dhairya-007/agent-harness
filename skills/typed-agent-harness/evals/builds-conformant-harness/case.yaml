@@ -1,0 +1,11 @@
+name: builds-conformant-harness
+description: >
+  Builds a harness from a needs-phrased brief against a fixed public API contract,
+  then scores it with graders/conformance.ts — 20 executable checks driven through
+  a scripted fake client. A good result passes all of them; the ones that
+  distinguish a careful harness are C2 (a max_tokens turn's tool calls must not
+  execute), C8 (pruning empties blocks rather than removing them, pairing intact),
+  C9 (the budget consults the API token counter) and C10/C11 (verification sends
+  the model back, and reports verified:false when attempts run out rather than
+  throwing or claiming true).
+run: npx tsx graders/conformance.ts <build-dir>

@@ -1,0 +1,1 @@
+The report identifies that needsApproval is declared on the issue_refund tool but is never read anywhere, and/or that the dollar limit is enforced inside the tool body on unvalidated input rather than as a gate before execution.
